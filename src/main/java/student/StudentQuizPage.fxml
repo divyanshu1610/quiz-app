@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="720.0" maxWidth="1080.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #00838F;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.StudentQuizPageController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="55.0" prefWidth="1080.0" style="-fx-background-color: #006064;" AnchorPane.bottomAnchor="665.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="sName" editable="false" focusTraversable="false" layoutX="51.0" layoutY="7.0" mouseTransparent="true" prefHeight="41.0" prefWidth="321.0" style="-fx-background-color: #006064;" />
+            <TextField fx:id="timer" editable="false" focusTraversable="false" layoutX="916.0" layoutY="7.0" mouseTransparent="true" prefHeight="41.0" prefWidth="150.0" />
+            <Label layoutX="827.0" layoutY="18.0" text="TIME LEFT" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="quizPane" layoutX="1.0" layoutY="53.0" prefHeight="665.0" prefWidth="1080.0">
+         <children>
+            <Pane layoutX="289.0" layoutY="9.0" prefHeight="648.0" prefWidth="778.0" style="-fx-background-color: #4FC3F7;">
+               <children>
+                  <TextArea fx:id="displayQuestion" editable="false" focusTraversable="false" layoutX="15.0" layoutY="47.0" mouseTransparent="true" pickOnBounds="false" prefHeight="335.0" prefWidth="748.0" style="-fx-background-color: #ffffff;">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <InnerShadow blurType="GAUSSIAN" />
+                     </effect>
+                  </TextArea>
+                  <TextField fx:id="quesNo" editable="false" focusTraversable="false" layoutX="14.0" layoutY="6.0" mouseTransparent="true" prefHeight="29.0" prefWidth="278.0" style="-fx-border-color: #4FC3F7f; -fx-background-color: #4FC3F7;">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Pane fx:id="optionPane" layoutX="24.0" layoutY="391.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="181.0" prefWidth="338.0" spacing="5.0">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <children>
+                              <RadioButton fx:id="op1" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" text="RadioButton" />
+                              <RadioButton fx:id="op2" mnemonicParsing="false" prefHeight="35.0" prefWidth="111.0" text="RadioButton" />
+                              <RadioButton fx:id="op3" mnemonicParsing="false" prefHeight="38.0" prefWidth="122.0" text="RadioButton" />
+                              <RadioButton fx:id="op4" mnemonicParsing="false" prefHeight="35.0" prefWidth="103.0" text="RadioButton" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Button fx:id="btnSave" layoutX="372.0" layoutY="586.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="41.0" prefWidth="99.0" text="Save" />
+                  <Button fx:id="btnNext" layoutX="659.0" layoutY="586.0" mnemonicParsing="false" onAction="#nextQuestionPressed" prefHeight="41.0" prefWidth="99.0" text="Next" />
+                  <TextField fx:id="marks" layoutX="640.0" layoutY="12.0" prefHeight="29.0" prefWidth="111.0" />
+                  <Pane fx:id="TFPane" layoutX="45.0" layoutY="398.0" prefHeight="181.0" prefWidth="327.0" visible="false">
+                     <children>
+                        <RadioButton layoutX="43.0" layoutY="20.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="111.0" text="True" />
+                        <RadioButton layoutX="47.0" layoutY="91.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="104.0" text="False" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="571.0" layoutY="17.0" text="MARKS :" />
+               </children>
+            </Pane>
+            <Button layoutX="41.0" layoutY="246.0" mnemonicParsing="false" onAction="#btnNextSectionPressed" prefHeight="41.0" prefWidth="206.0" text="Next Section" />
+            <Button layoutX="41.0" layoutY="319.0" mnemonicParsing="false" onAction="#btnPrevSectionPressed" prefHeight="41.0" prefWidth="206.0" text="Previous Section" />
+            <Button fx:id="btnEnd" layoutX="85.0" layoutY="408.0" mnemonicParsing="false" onAction="#endButtonPressed" prefHeight="41.0" prefWidth="99.0" text="End Quiz" />
+         </children>
+      </Pane>
+      <Pane fx:id="startPane" layoutX="14.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00838F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+         <children>
+            <Button fx:id="btnStart" layoutX="500.0" layoutY="459.0" mnemonicParsing="false" onAction="#startQuiz" prefHeight="29.0" prefWidth="81.0" text="Start" />
+            <Label alignment="CENTER" layoutX="395.0" layoutY="193.0" prefHeight="201.0" prefWidth="291.0" text="IMPORTANT INSTRUCTIONS" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="EndPane" layoutX="7.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00BCD4;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextArea fx:id="textareaQuery" layoutX="782.0" layoutY="191.0" prefHeight="261.0" prefWidth="265.0" style="-fx-background-color: #B3E5FC; -fx-foreground-color: #B3E5FC;" />
+            <TextField fx:id="teachername" editable="false" focusTraversable="false" layoutX="782.0" layoutY="123.0" mouseTransparent="true" prefHeight="41.0" prefWidth="265.0" style="-fx-background-color: #B3E5FC;">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="782.0" layoutY="62.0" prefHeight="38.0" prefWidth="200.0" text="QUIZ BY " />
+            <Button fx:id="btnSendQuery" layoutX="782.0" layoutY="471.0" mnemonicParsing="false" onAction="#sendQueryPressed" prefHeight="41.0" prefWidth="265.0" text="Send Query " />
+            <Label layoutX="280.0" layoutY="217.0" prefHeight="55.0" prefWidth="99.0" text="MARKS SCORED " textFill="WHITE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelMarks" alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="119.0" prefHeight="90.0" prefWidth="99.0" text="-" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Slider fx:id="slider" layoutX="233.0" layoutY="353.0" prefHeight="55.0" prefWidth="193.0" />
+            <Label fx:id="rating" alignment="CENTER" layoutX="293.0" layoutY="408.0" prefHeight="29.0" prefWidth="74.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnRate" layoutX="284.0" layoutY="454.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="89.0" text="Rate It !" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

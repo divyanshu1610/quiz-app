@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="dashboardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #8BC34A;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teacher.TeacherDashboardController">
+   <children>
+      <Pane layoutX="9.0" layoutY="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="1080.0" style="-fx-background-color: #2E7D32;" AnchorPane.bottomAnchor="660.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+          <Button layoutX="980.0" layoutY="16.0" mnemonicParsing="false" onAction="#logoutButtonPushed" prefHeight="29.0" prefWidth="76.0" text="LOGOUT" />
+            <TextField fx:id="userName" alignment="CENTER" editable="false" focusTraversable="false" layoutX="71.0" layoutY="11.0" mouseTransparent="true" prefHeight="40.0" prefWidth="265.0" style="-fx-background-color: #2E7D32; -fx-text-fill: #ffffff;">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane layoutX="47.0" layoutY="171.0" prefHeight="445.0" prefWidth="298.0" style="-fx-background-color: #81C784;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#hostButtonPushed" prefHeight="50.0" prefWidth="299.0" style="-fx-border-radius: 0; -fx-background-radius: 0;" text="HOST A QUIZ" />
+            <Button fx:id="btnquery" layoutY="50.0" mnemonicParsing="false" onAction="#queryButtonPushed" prefHeight="50.0" prefWidth="299.0" text="VIEW STUDENT QUERIES" />
+            <Label fx:id="numqh" alignment="CENTER" layoutX="111.0" layoutY="223.0" prefHeight="74.0" prefWidth="76.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="318.0" text="NUMBER OF QUIZ HOSTED" />
+         </children>
+      </Pane>
+      <Pane fx:id="queryPane" layoutX="667.0" layoutY="171.0" prefHeight="454.0" prefWidth="310.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <ListView fx:id="queryList" fixedCellSize="0.0" prefHeight="413.0" prefWidth="310.0" />
+            <Button layoutY="413.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="310.0" text="Reply" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
