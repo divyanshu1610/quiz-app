@@ -1,9 +1,10 @@
 # Squiz App
+## Java software
 
 ### About
 A quiz platform for students and teachers.
 Teachers can host multiple quiz of different subjects easily.
-Students can attempt any quiz
+Students can attempt any quiz.
 <br>
 
 ### Initial Setup
